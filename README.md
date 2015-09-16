@@ -21,7 +21,7 @@ Add the following dependency to your `project.clj` file:
   (:require [khroma.runtime :as runtime))
   
   
-; receieve messages for extension  
+; receive messages for extension  
 (let [messages (runtime/messages)]
   (go-loop [] 
     (when-let [message (<! messages)]
@@ -31,10 +31,10 @@ Add the following dependency to your `project.clj` file:
 ; send message to anoher extension      
 (runtime/send-message 
    {:message-data "xx" :something-else "yyy"}
-   {:extensionId "some.other.extension"
+   :extensionId "some.other.extension"
     :responseCallback 
-      (fn [response]
-        (handle-response response))})
+    (fn [response]
+      (handle-response response)))
 ```
 
 ## License
