@@ -32,9 +32,9 @@ Add the following dependency to your `project.clj` file:
 (runtime/send-message 
    {:message-data "xx" :something-else "yyy"}
    :extensionId "some.other.extension"
-    :responseCallback 
-    (fn [response]
-      (handle-response response)))
+   :responseCallback 
+   (fn [response]
+     (handle-response response)))
 ```
 
 ## License
